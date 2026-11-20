@@ -1,0 +1,130 @@
+---
+layout: layout.njk
+metaTitle: Manager Cloud — Accounting Software in the Cloud
+description: The cloud edition of Manager.io accounting software. No installation, anywhere access for your entire team. Unlimited users and unlimited businesses for one flat price.
+wide: true
+currencies:
+  - { code: USD, monthly: 59 }
+  - { code: CAD, monthly: 79 }
+  - { code: AUD, monthly: 89 }
+  - { code: EUR, monthly: 59 }
+  - { code: GBP, monthly: 49 }
+  - { code: NZD, monthly: 99 }
+  - { code: SGD, monthly: 79 }
+features:
+  - title: Full-Featured Accounting
+    description: The complete Manager feature set — invoicing, bank reconciliation, reports and more.
+  - title: Nothing to Install
+    description: Easy to set up. Your books run in the browser at your own address.
+  - title: Any Device
+    description: Use on desktops, laptops, tablets and phones — anywhere with remote access.
+  - title: Multi-User Access
+    description: Your whole team works in the same books at the same time, with user permissions to control who sees what.
+  - title: Automatic Backups
+    description: Your data is backed up automatically — nothing for you to manage.
+  - title: Automatic Updates
+    description: Always on the latest version without lifting a finger.
+---
+<section class="hero">
+    <h1>The Same Accounting Software but in the Cloud</h1>
+    <p>No installation, anywhere access for your entire team</p>
+    <div class="hero-actions">
+        <a href="{{ site.app }}/free-trial" class="btn btn-lg">Begin Free Trial</a>
+        <a href="#pricing" class="btn btn-secondary btn-lg">See Pricing</a>
+    </div>
+</section>
+
+<section class="section" id="pricing">
+    <div class="container">
+        <h2 class="section-title">Simple, Flat Pricing</h2>
+        <div class="pricing-card">
+            <div class="pricing-controls">
+                <select id="currency" aria-label="Currency">
+                    {%- for currency in currencies %}
+                    <option value="{{ currency.monthly }}">{{ currency.code }}</option>
+                    {%- endfor %}
+                </select>
+                <select id="period" aria-label="Billing period">
+                    <option value="1">per month</option>
+                    <option value="10">per year</option>
+                </select>
+            </div>
+
+            <div class="price" id="price">{{ currencies[0].monthly }} {{ currencies[0].code }}</div>
+            <div class="price-period" id="periodDisplay">per month</div>
+
+            <ul class="pricing-includes">
+                <li><strong>Unlimited Users + Unlimited Businesses</strong></li>
+                <li>No per-user pricing or fees</li>
+                <li>No per-business pricing or fees</li>
+            </ul>
+
+            <a href="{{ site.app }}/free-trial" class="btn btn-lg btn-block">Begin Free Trial</a>
+            <p class="muted pricing-note">14-day free trial. No credit card required.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Everything Included</h2>
+        <div class="feature-grid">
+            {%- for feature in features %}
+            <div class="feature">
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.description }}</p>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container center">
+        <p class="strong">Existing Customer?</p>
+        <div class="hero-actions">
+            <a href="{{ site.app }}/portal" class="btn btn-secondary">Customer Portal</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>Do we pay extra for more users or businesses?</summary>
+                <p>No. We don't charge you based on how many users or businesses you add. 5 or 50, the price is the same. If you have many businesses, you can also specify which businesses are visible to which users. Great for accountants with many clients.</p>
+            </details>
+            <details>
+                <summary>Do you offer discounts?</summary>
+                <p>We strive to price our services fairly and transparently for all our customers, which is why we do not offer discounts. Our goal is to deliver exceptional value that exceeds the cost, even at full price. One flat price covers unlimited users and unlimited businesses, so what you see is what everyone pays.</p>
+            </details>
+            <details>
+                <summary>Can we cancel subscription at any time?</summary>
+                <p>You can cancel at any time without penalty or hassle. And unlike most online accounting systems which lock you in, your data is always yours — you can download all of it from the cloud whenever you want.</p>
+            </details>
+            <details>
+                <summary>How do I manage my subscription?</summary>
+                <p>Visit our <a href="{{ site.app }}/portal">customer portal</a> where you can update your billing details, view invoices or cancel subscription.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Annual billing costs ten months, so the price is the monthly figure times the period.
+    const currencySelect = document.getElementById("currency");
+    const periodSelect = document.getElementById("period");
+
+    function updatePrice() {
+        const currency = currencySelect.options[currencySelect.selectedIndex];
+        const period = periodSelect.options[periodSelect.selectedIndex];
+        document.getElementById("price").textContent = `${Number(currency.value) * Number(period.value)} ${currency.text}`;
+        document.getElementById("periodDisplay").textContent = period.text;
+    }
+
+    currencySelect.addEventListener("change", updatePrice);
+    periodSelect.addEventListener("change", updatePrice);
+    updatePrice();
+</script>

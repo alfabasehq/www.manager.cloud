@@ -1,0 +1,61 @@
+---
+layout: layout.njk
+title: Privacy Policy
+description: What Manager Cloud collects, why, who it is shared with, and where it is stored.
+mainClass: legal
+---
+<h1 class="page-title">Privacy Policy</h1>
+<p class="page-subtitle">Last updated 13 November 2026</p>
+
+<p>This policy covers the manager.cloud website and the cloud servers we run for customers. It separates two things: information about <strong>you as a customer</strong>, and the <strong>accounting data you keep inside your cloud server</strong>, which we treat as yours and look at only in the narrow cases described below.</p>
+
+<h2>What we collect</h2>
+<ul>
+    <li><strong>Account details</strong> — your email address, your password (stored hashed by AWS Cognito, never in readable form), and your two-factor settings if you turn them on.</li>
+    <li><strong>Billing details</strong> — name, address and any tax details you enter, plus your invoices and subscription history. Card details go straight to Stripe; we never see or store your full card number.</li>
+    <li><strong>Cloud server details</strong> — your subdomain, the region you chose, and the status of the server and its subscription.</li>
+    <li><strong>Your accounting data</strong> — everything you enter into your cloud server, including any files you attach and any users you invite.</li>
+    <li><strong>Technical records</strong> — standard server logs (IP address, browser, page and time) and error diagnostics when something goes wrong.</li>
+</ul>
+
+<h2>What we use it for</h2>
+<p>To create and run your cloud server, sign you in, take payment, send you account and service emails, answer your support requests, keep the service secure and working, and meet our legal and tax obligations.</p>
+<p>We do not sell or rent your information, we don't use it for advertising, and we don't use your accounting data to train anything.</p>
+
+<h2>Who we share it with</h2>
+<p>Only the providers we need to run the service:</p>
+<ul>
+    <li><strong>Amazon Web Services</strong> — hosting, storage and backups for your cloud server, sign-in (Cognito), and the account emails we send (SES).</li>
+    <li><strong>Stripe</strong> — payments, invoices and billing details.</li>
+    <li><strong>Sentry</strong> — error diagnostics from the website so we can find and fix faults.</li>
+</ul>
+<p>If an <strong>advisor</strong> is attached to your cloud server, they can also see your cloud server's address, the email on the account, your plan and renewal date, and your payment history — never the accounting data inside your server. You can see who is attached, and remove them, under Your Advisor in the <a href="{{ site.app }}/portal">customer portal</a>. Section 7 of the <a href="/terms-of-use/">Terms of Use</a> explains how an advisor becomes attached.</p>
+<p>If someone other than you <strong>pays for the subscription</strong>, we may give that person or organisation a copy of the data on the cloud server once we have verified that they are the payer. We email the address on the account when we do. Section 6 of the <a href="/terms-of-use/">Terms of Use</a> covers this.</p>
+<p>Beyond that, we disclose information only where the law requires it.</p>
+
+<h2>Where it is stored</h2>
+<p>Your cloud server and its data live in the region you chose when you signed up — N. Virginia, Ireland, Frankfurt, Singapore, Sydney or Cape Town — and stay there. Your sign-in account, the record of which server belongs to which region, and your billing records are held in the United States by AWS and Stripe.</p>
+
+<h2>Your accounting data</h2>
+<p>We don't browse the contents of your cloud server. We access it only where it is needed to keep the service running, to help with a support request you have made, to provide a copy to a verified payer of the subscription as described above, or where the law requires it. You can download all of your data at any time.</p>
+
+<h2>Cookies and tracking</h2>
+<p>We don't use advertising or analytics cookies, and there are no third-party trackers on this site. When you sign in, your session token is stored in your browser's local storage so you stay signed in; clearing your browser data signs you out. Our servers keep ordinary access logs.</p>
+
+<h2>Emails</h2>
+<p>We send account and service emails — email verification, trial and billing notices, security alerts and replies to your support requests. We don't send marketing email.</p>
+
+<h2>How long we keep it</h2>
+<p>We keep your account and cloud server data while your account is active. When a subscription ends, the cloud server is stopped and its data may be deleted — we don't commit to keeping it for any particular length of time, so download your data before you cancel. Deleting a cloud server in the customer portal removes it and its data straight away. Billing and tax records are kept for as long as the law requires.</p>
+
+<h2>Your choices</h2>
+<p>You can view and change your account and billing details, download your data, and delete your cloud server from the <a href="{{ site.app }}/portal">customer portal</a>. To ask for a copy of what we hold about you, to correct it, or to have it deleted, email <a href="mailto:support@manager.cloud">support@manager.cloud</a>.</p>
+
+<h2>Security</h2>
+<p>Traffic to the site and to your cloud server is encrypted with HTTPS. Passwords are hashed, two-factor authentication is available, backups run automatically, and access to production systems is limited to the people who need it. No system is perfectly secure, so please use a strong, unique password and turn on two-factor authentication.</p>
+
+<h2>Changes to this policy</h2>
+<p>We may update this policy. The current version is always on this page with the date it was last updated.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy, or a request about your information: <a href="mailto:support@manager.cloud">support@manager.cloud</a>.</p>

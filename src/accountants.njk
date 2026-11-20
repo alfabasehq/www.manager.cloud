@@ -1,0 +1,42 @@
+---
+layout: layout.njk
+title: Find an Accountant
+description: Find a locally-based accountant or bookkeeper with expertise in Manager.
+wide: true
+---
+{# The listings live in StoreRocket. Accountants manage their own in the app, at /public-profile. #}
+<div class="container center">
+    <h1 class="page-title">Accountants and bookkeepers in your area</h1>
+    <p class="page-subtitle">Find a locally-based accountant or bookkeeper who possesses expertise in Manager.</p>
+</div>
+
+<section class="section">
+    <div class="container">
+        {# The widget replaces everything inside this element once it loads. #}
+        <div class="storerocket-store-locator directory-widget" dir="ltr">
+            <p class="spinner-note"><span class="spinner dark"></span>Loading directory...</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>Can I contact these accountants for free support?</summary>
+                <p>The accountants listed above are independent professionals in your area who use Manager with their clients. They are not employees, agents, or representatives of Manager. While they are familiar with Manager, they are professional service providers who charge fees for their services.</p>
+            </details>
+            <details>
+                <summary>Why are these accountants listed here?</summary>
+                <p>We provide this directory as a service to our users who might be seeking accounting professionals familiar with Manager. It's a way to connect businesses with professionals who can assist them in their accounting needs using our software.</p>
+            </details>
+            <details>
+                <summary>How can I be listed as an accountant on this directory?</summary>
+                <p>To ensure the integrity and quality of our directory, only accountants who use cloud edition with their clients are eligible to be listed. This requirement helps us maintain a high standard for listings and minimize spam. If you are an accountant using cloud edition and wish to be included in the directory, please sign up <a href="{{ site.app }}/public-profile">here</a>.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<script src="/js/accountants.js" defer></script>

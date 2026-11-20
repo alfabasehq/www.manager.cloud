@@ -1,0 +1,22 @@
+---
+layout: layout.njk
+title: Page not found
+noindex: true
+eleventyExcludeFromCollections: true
+permalink: /404.html
+---
+<script>
+    // Sign-up, the portal and the other signed-in pages used to be served from this address and are
+    // still linked from emails, Stripe and bookmarks. Send those to the app, keeping the rest of the URL.
+    if (/^\/(free-trial|portal|public-profile|admin|advisors\/dashboard)(\/|$)/.test(window.location.pathname)) {
+        window.location.replace("{{ site.app }}" + window.location.pathname + window.location.search + window.location.hash);
+    }
+</script>
+<div class="hero">
+    <h1>Page not found</h1>
+    <p>Sorry, we couldn't find the page you're looking for.</p>
+    <div class="hero-actions">
+        <a href="/" class="btn">Go back home</a>
+        <a href="{{ site.app }}/portal" class="btn btn-secondary">Customer Portal</a>
+    </div>
+</div>

@@ -1,0 +1,536 @@
+/* Same look as the ManagerCloud app (its wwwroot/styles.css), cut down to what the pages here use. */
+
+:root {
+    --bg: #f6f8fa;
+    --surface: #ffffff;
+    --border: #d9dee3;
+    --text: #1f2328;
+    --text-muted: #59636e;
+    --accent: #0026ff;
+    --accent-hover: #001fd1;
+    --danger: #b42318;
+    --danger-bg: #fef3f2;
+    --success: #067647;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+}
+
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
+a {
+    color: var(--accent);
+}
+
+code {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 0.85em;
+}
+
+.muted {
+    color: var(--text-muted);
+}
+
+.strong {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 72rem;
+    padding: 0 1.5rem;
+}
+
+.container.narrow {
+    max-width: 48rem;
+}
+
+main.narrow {
+    max-width: 40rem;
+    padding-bottom: 1rem;
+}
+
+/* Site header */
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    min-height: 3.75rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.15rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand .brand-cloud {
+    color: var(--accent);
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.25rem;
+}
+
+.site-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+}
+
+.site-nav a.btn {
+    color: #fff;
+}
+
+/* Site footer */
+.site-footer {
+    margin-top: 4rem;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.site-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-footer a {
+    color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--bg);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.6rem;
+    font-size: 1.05rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Cards, alerts, badges */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.alert {
+    padding: 0.7rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-neutral {
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+}
+
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+/* Home page */
+.hero {
+    text-align: center;
+    padding: 4.5rem 1.5rem 3rem;
+}
+
+.hero h1 {
+    margin: 0 auto 1rem;
+    max-width: 46rem;
+    font-size: 2.6rem;
+}
+
+.hero p {
+    margin: 0 auto 2rem;
+    max-width: 38rem;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 40rem) {
+    .hero {
+        padding-top: 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+.section {
+    padding: 2.5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 0 0 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.25rem;
+}
+
+.feature {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.feature h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+}
+
+.feature p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+/* Pricing */
+.pricing-card {
+    max-width: 30rem;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.pricing-card .price {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.pricing-card .price-period {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.pricing-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+
+.pricing-controls select {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.pricing-includes {
+    margin: 1.25rem 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-muted);
+}
+
+.pricing-includes li {
+    padding: 0.3rem 0;
+}
+
+.pricing-includes li::before {
+    content: "✓ ";
+    color: var(--success);
+    font-weight: 700;
+}
+
+.pricing-note {
+    margin: 0.9rem 0 0;
+    font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq {
+    max-width: 46rem;
+    margin: 0 auto;
+}
+
+.faq details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.faq summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq details p {
+    margin: 0.75rem 0 0;
+    color: var(--text-muted);
+}
+
+/* Page headings */
+.page-title {
+    margin: 2.5rem 0 0.5rem;
+    font-size: 1.8rem;
+}
+
+.page-subtitle {
+    margin: 0 0 2rem;
+    color: var(--text-muted);
+}
+
+/* Legal pages */
+.legal {
+    max-width: 46rem;
+    padding-bottom: 1rem;
+}
+
+.legal h2 {
+    margin: 2rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.legal p,
+.legal li {
+    color: var(--text-muted);
+}
+
+.legal ul {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+}
+
+.legal li {
+    margin-bottom: 0.35rem;
+}
+
+/* Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.spinner-note {
+    color: var(--text-muted);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Accountants directory */
+.directory-widget {
+    width: 100%;
+    min-height: 20rem;
+}
+
+/* Advisor directory */
+.country-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: -1rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.country-pick {
+    font: inherit;
+    font-weight: 600;
+    color: var(--text);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline dashed;
+    text-underline-offset: 3px;
+}
+
+.country-pick:hover {
+    color: var(--accent);
+}
+
+.country-line select {
+    padding: 0.3rem 0.5rem;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.advisor-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.advisor-card {
+    padding: 1.25rem;
+}
+
+.advisor-card-link {
+    display: block;
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.advisor-card-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+}
+
+.advisor-card-description {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.advisor-card-website {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+}
+
+.advisor-card-countries {
+    margin-top: 1.25rem;
+}
+
+.advisor-card-countries-title {
+    margin: 0 0 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.advisor-contact {
+    margin: 1.5rem 0 0;
+}
+
+.back-link {
+    margin: 2rem 0 1.25rem;
+    font-size: 0.9rem;
+}

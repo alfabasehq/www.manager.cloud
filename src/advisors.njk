@@ -1,0 +1,46 @@
+---
+layout: layout.njk
+title: Find an Advisor
+description: Connect with experienced consultants who specialise in Manager.
+wide: true
+---
+{# The listing is loaded in the browser from the app's anonymous API by /js/advisors.js. #}
+<div class="container center">
+    <h1 class="page-title">Find an Advisor</h1>
+    <p class="page-subtitle">Connect with experienced consultants who specialise in Manager.</p>
+    <div id="countryLine" class="country-line" style="display: none;"></div>
+</div>
+
+<section class="section">
+    <div class="container narrow">
+        <div id="advisorsList" class="advisor-list" data-api="{{ site.app }}">
+            <div class="spinner-note"><span class="spinner dark"></span>Loading advisors...</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>What is an advisor?</summary>
+                <p>Advisors are accountants, bookkeepers and consultants who specialise in implementing, configuring and supporting businesses that run the cloud edition.</p>
+            </details>
+            <details>
+                <summary>How are advisors different from accountants?</summary>
+                <p>Advisors focus on Manager itself. The accountants in our <a href="/accountants/">directory</a> offer general accounting services, while advisors bring deeper expertise in configuring Manager for complex workflows, training, migration and ongoing support. Advisors earn commission from Manager, and may also charge for their consulting services.</p>
+            </details>
+            <details>
+                <summary>Do advisors charge fees?</summary>
+                <p>Advisors have flexibility in how they work with clients. They earn commission from Manager for the customers they support, and may also charge for implementation, customisation, training and ongoing consulting. Contact an advisor directly to discuss their services and pricing.</p>
+            </details>
+            <details>
+                <summary>How do I become an advisor?</summary>
+                <p>Set up your profile in the <a href="{{ site.app }}/advisors/dashboard">advisor dashboard</a>. Once you have a profile and at least one client with an active subscription assigned to you, you appear in this directory automatically.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/js/advisors.js"></script>
