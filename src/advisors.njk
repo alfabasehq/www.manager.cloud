@@ -4,18 +4,16 @@ title: Find an Advisor
 description: Connect with experienced consultants who specialise in Manager.
 wide: true
 ---
-{# The listing is loaded in the browser from the app's anonymous API by /js/advisors.js. #}
 <div class="container center">
     <h1 class="page-title">Find an Advisor</h1>
     <p class="page-subtitle">Connect with experienced consultants who specialise in Manager.</p>
-    <div id="countryLine" class="country-line" style="display: none;"></div>
 </div>
 
 <section class="section">
     <div class="container narrow">
-        <div id="advisorsList" class="advisor-list" data-api="{{ site.app }}">
-            <div class="spinner-note"><span class="spinner dark"></span>Loading advisors...</div>
-        </div>
+        {# The directory is the advisor portal's page. It posts its content height so the frame never scrolls. #}
+        <iframe id="manager-advisors" class="directory-frame" src="https://advisors.manager.cloud/embed"
+                title="Advisor directory" height="600"></iframe>
     </div>
 </section>
 
@@ -37,10 +35,16 @@ wide: true
             </details>
             <details>
                 <summary>How do I become an advisor?</summary>
-                <p>Set up your profile in the <a href="{{ site.app }}/advisors/dashboard">advisor dashboard</a>. Once you have a profile and at least one client with an active subscription assigned to you, you appear in this directory automatically.</p>
+                <p>Set up your profile in the <a href="https://advisors.manager.cloud">advisor portal</a>. Once you have a profile and at least one client with an active subscription assigned to you, you appear in this directory automatically.</p>
             </details>
         </div>
     </div>
 </section>
 
-<script type="module" src="/js/advisors.js"></script>
+<script>
+    window.addEventListener("message", (e) => {
+        if (e.origin !== "https://advisors.manager.cloud") return;
+        if (e.data?.type !== "manager-advisors-height") return;
+        document.getElementById("manager-advisors").height = e.data.height;
+    });
+</script>

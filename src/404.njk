@@ -7,9 +7,18 @@ permalink: /404.html
 ---
 <script>
     // Sign-up, the portal and the other signed-in pages used to be served from this address and are
-    // still linked from emails, Stripe and bookmarks. Send those to the app, keeping the rest of the URL.
-    if (/^\/(free-trial|portal|public-profile|admin|advisors\/dashboard)(\/|$)/.test(window.location.pathname)) {
-        window.location.replace("{{ site.app }}" + window.location.pathname + window.location.search + window.location.hash);
+    // still linked from emails, Stripe, advisors' referral links and bookmarks. Send each to where it
+    // lives now. Those on my.manager.cloud kept their path, so the rest of the URL goes with them.
+    const path = window.location.pathname;
+    if (/^\/(free-trial|portal|admin)(\/|$)/.test(path)) {
+        window.location.replace("{{ site.app }}" + path + window.location.search + window.location.hash);
+    } else if (/^\/advisors\/dashboard(\/|$)/.test(path)) {
+        window.location.replace("https://advisors.manager.cloud");
+    } else if (/^\/public-profile(\/|$)/.test(path)) {
+        window.location.replace("https://accountants.manager.cloud");
+    } else if (/^\/advisors\/profile(\/|$)/.test(path)) {
+        // One advisor's page is gone; the directory shows them all.
+        window.location.replace("/advisors/");
     }
 </script>
 <div class="hero">
